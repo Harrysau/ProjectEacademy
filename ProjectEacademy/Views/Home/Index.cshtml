@@ -1,0 +1,28 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+<body style="background-image: url(../Images/71564-beautiful-light-purple-background-1920x1080.png);">
+    <div class="row" style="padding-top: 80px;">
+        <div class="col-lg-6 col-md-12 col">
+            <div class="panel-images">
+                <img class="img-fluid" src="~/Images/Home/MEETING-webinar.png" alt="MEETING-webinar.png" />
+            </div>
+        </div>
+        <div class="col col-lg-6 col-md-12">
+            <div>
+                <h1>Welcome to eAcademy*ot toin mean logo*</h1>
+            </div>
+            <div class="description">
+                <p>
+                    Welcome to eacademy blah blah blah blah blah blahblah blah blahblah blah blah
+                    <br />blah blah blahblah blah blahblah blah blahblah blah blahblah blah blah
+                </p>
+            </div>
+            <div class="loginregister">
+                <a class="btn btn-outline-primary" href=@Url.Action("AltLoginView","Home") style="font-size: 2vw;">Log In</a>
+                &nbsp;&nbsp;&nbsp;
+                <a class="btn btn-outline-primary btn-custom" href=@Url.Action("AltRegisterView", "Home") style="font-size: 2vw;">Register</a>
+            </div>
+        </div>
+    </div>
+</body>
