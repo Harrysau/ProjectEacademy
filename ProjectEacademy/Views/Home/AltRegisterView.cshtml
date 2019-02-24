@@ -18,13 +18,13 @@
                         {
                             @Html.AntiForgeryToken()
                             <div class="form-label-group">
-                                <input type="text" name="User" id="inputUserame" class="form-control" placeholder="Username" required autofocus>
-                                <label for="inputUserame">Username</label>
+                                <input type="text" name="Email" id="inputEmail" class="form-control" placeholder="Email address" required>
+                                <label for="inputEmail">Email address</label>
                             </div>
 
                             <div class="form-label-group">
-                                <input type="email" name="Email" id="inputEmail" class="form-control" placeholder="Email address" required>
-                                <label for="inputEmail">Email address</label>
+                                <input type="text" name="User" id="inputUserame" class="form-control" placeholder="Username" required autofocus>
+                                <label for="inputUserame">Username</label>
                             </div>
 
                             <hr>
@@ -50,7 +50,7 @@
                             </div>
 
                             <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Register</button>
-                            @Html.ActionLink("Log in", "AltLoginView", "Home", routeValues: null, htmlAttributes: new { @class="d-block text-center mt-2 small"})
+                            @Html.ActionLink("Log in", "AltLoginView", "Home", routeValues: null, htmlAttributes: new { @class = "d-block text-center mt-2 small" })
                             <hr class="my-4">
                         }
                     </div>
