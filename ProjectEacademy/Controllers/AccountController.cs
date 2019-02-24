@@ -80,7 +80,8 @@ namespace ProjectEacademy.Controllers
             switch (result)
             {
                 case SignInStatus.Success:
-                    return RedirectToLocal(returnUrl);
+                    //return RedirectToLocal(returnUrl);
+                    return RedirectToAction("UserHome", "User");
                 case SignInStatus.LockedOut:
                     return View("Lockout");
                 case SignInStatus.RequiresVerification:
@@ -152,7 +153,7 @@ namespace ProjectEacademy.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser { UserName = model.Email, Email = model.Email, User = model.User };
+                var user = new ApplicationUser { UserName = model.Email, Email = model.Email, User = model.User, AccType = model.AccType };
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {

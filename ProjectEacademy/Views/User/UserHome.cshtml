@@ -1,0 +1,16 @@
+﻿@using Microsoft.AspNet.Identity
+@using ProjectEacademy.Extension
+@{
+    ViewBag.Title = "UserHome";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>UserHome</h2>
+@if (Request.IsAuthenticated)
+{
+    <h1>Welcome Back You are a @User.Identity.GetAccountType()</h1>
+}
+else   
+{
+    <h2>You dont have permission to access this page</h2>
+}

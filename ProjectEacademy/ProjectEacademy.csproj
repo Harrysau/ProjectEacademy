@@ -178,6 +178,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Extension\IdentityExtensions.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -194,7 +195,12 @@
     <Compile Include="Migrations\201901201416310_addusername.Designer.cs">
       <DependentUpon>201901201416310_addusername.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201902230933412_AddUserAccounType.cs" />
+    <Compile Include="Migrations\201902230933412_AddUserAccounType.Designer.cs">
+      <DependentUpon>201902230933412_AddUserAccounType.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\AccountType.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
@@ -222,7 +228,13 @@
     <Content Include="Content\js\main.js" />
     <Content Include="Content\login-main.css" />
     <Content Include="Content\login-util.css" />
-    <Content Include="Content\RegisterCSS.css" />
+    <None Include="Content\RegisterCSS.scss" />
+    <Content Include="Content\RegisterCSS.css">
+      <DependentUpon>RegisterCSS.scss</DependentUpon>
+    </Content>
+    <Content Include="Content\RegisterCSS.min.css">
+      <DependentUpon>RegisterCSS.css</DependentUpon>
+    </Content>
     <Content Include="Content\RegisterSCSS.css">
       <DependentUpon>RegisterSCSS.scss</DependentUpon>
     </Content>
@@ -416,6 +428,7 @@
     <Content Include="Views\Home\AltLoginView.cshtml" />
     <Content Include="Views\Shared\_Navbar.cshtml" />
     <Content Include="Views\Home\AltRegisterView.cshtml" />
+    <Content Include="Views\User\UserHome.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -440,6 +453,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201901201416310_addusername.resx">
       <DependentUpon>201901201416310_addusername.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201902230933412_AddUserAccounType.resx">
+      <DependentUpon>201902230933412_AddUserAccounType.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

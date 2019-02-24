@@ -91,3 +91,4 @@ D:\HARRY\ASP.net\ProjectEacademy\ProjectEacademy\obj\Debug\ProjectEacademy.Migra
 D:\HARRY\ASP.net\ProjectEacademy\ProjectEacademy\obj\Debug\ProjectEacademy.csproj.GenerateResource.cache
 D:\HARRY\ASP.net\ProjectEacademy\ProjectEacademy\obj\Debug\ProjectEacademy.Migrations._new.resources
 D:\HARRY\ASP.net\ProjectEacademy\ProjectEacademy\obj\Debug\ProjectEacademy.Migrations.addusername.resources
+D:\HARRY\ASP.net\ProjectEacademy\ProjectEacademy\obj\Debug\ProjectEacademy.Migrations.AddUserAccounType.resources

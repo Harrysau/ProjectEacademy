@@ -29,7 +29,7 @@
   height: 40px;
   width: 40px;
   transition: all 0.15s ease-out 0s;
-  background: #cbd1d8;
+  background: #d3cbd8;
   border: none;
   color: #fff;
   cursor: pointer;
@@ -43,7 +43,7 @@
   background: #9faab7; }
 
 .option-input:checked {
-  background: #40e0d0; }
+  background: #7a40e0 !important; }
 
 .option-input:checked::before {
   height: 40px;
@@ -59,7 +59,7 @@
   -webkit-animation: click-wave 0.65s;
   -moz-animation: click-wave 0.65s;
   animation: click-wave 0.65s;
-  background: #40e0d0;
+  background: #7a40e0;
   content: '';
   display: block;
   position: relative;

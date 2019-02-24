@@ -11,12 +11,14 @@ namespace ProjectEacademy.Models
     public class ApplicationUser : IdentityUser
     {
         public string User { get; set; }
+        public AccountType AccType { get; set; }
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
         {
             // Note the authenticationType must match the one defined in CookieAuthenticationOptions.AuthenticationType
             var userIdentity = await manager.CreateIdentityAsync(this, DefaultAuthenticationTypes.ApplicationCookie);
             // Add custom user claims here
             userIdentity.AddClaim(new Claim("User", User));
+            userIdentity.AddClaim(new Claim("AccType", AccType.ToString()));
             return userIdentity;
         }
     }

@@ -84,6 +84,9 @@ namespace ProjectEacademy.Models
         [Display(Name = "Confirm password")]
         [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
+
+        [Display(Name = "I am A")]
+        public AccountType AccType { get; set; }
     }
 
     public class ResetPasswordViewModel
