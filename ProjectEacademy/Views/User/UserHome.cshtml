@@ -5,12 +5,108 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>UserHome</h2>
+@Styles.Render("~/Content/student-home.css")
+
 @if (Request.IsAuthenticated)
 {
-    <h1>Welcome Back You are a @User.Identity.GetAccountType()</h1>
+    if (User.Identity.GetAccountType().Equals("Student"))
+    {
+        <div class="container" id="main">
+            <nav>
+                <div>
+                    Hello <b>@User.Identity.GetUser()</b>
+                </div>
+
+                <div class="border-style"></div>
+
+                <div>Your Class</div>
+
+                <div class="list-group">
+                    <a href="https://www.jquery-az.com/jquery-tips/" class="list-group-item list-group-item-action">jQuery Tutorials</a>
+                </div>
+            </nav>
+            <article>
+                <div class="card">
+                    <div class="card-header">
+                        TeacherName has post in Classname
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">File: </p>
+                        <p class="card-text">Subject: </p>
+                        <p class="card-text">Description: </p>
+                    </div>
+                    <div class="card-footer text-muted">
+                        2 days ago
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        TeacherName has post in Classname
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">File: </p>
+                        <p class="card-text">Subject: </p>
+                        <p class="card-text">Description: </p>
+                    </div>
+                    <div class="card-footer text-muted">
+                        2 days ago
+                    </div>
+                </div>
+            </article>
+            <aside>Advertise</aside>
+        </div>
+    }
+    else
+    {
+        <div class="container" id="main">
+            <nav>
+                <div>
+                    Hello <b>@User.Identity.GetUser()</b>
+                </div>
+
+                <div class="border-style"></div>
+
+                <div>Your Class</div>
+
+                <div class="list-group">
+                    <a href="https://www.jquery-az.com/jquery-tips/" class="list-group-item list-group-item-action">jQuery Tutorials</a>
+                </div>
+            </nav>
+            <article>
+                <div class="card">
+                    <div class="card-header">
+                        You has post in Classname
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">File: </p>
+                        <p class="card-text">Subject: </p>
+                        <p class="card-text">Description: </p>
+                    </div>
+                    <div class="card-footer text-muted">
+                        2 days ago
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        You has post in Classname
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">File: </p>
+                        <p class="card-text">Subject: </p>
+                        <p class="card-text">Description: </p>
+                    </div>
+                    <div class="card-footer text-muted">
+                        2 days ago
+                    </div>
+                </div>
+            </article>
+            <aside>Advertise</aside>
+        </div>
+    }
 }
-else   
+else
 {
     <h2>You dont have permission to access this page</h2>
 }

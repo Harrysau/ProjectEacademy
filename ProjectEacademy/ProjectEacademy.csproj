@@ -241,6 +241,7 @@
     <Content Include="Content\RegisterSCSS.min.css">
       <DependentUpon>RegisterSCSS.css</DependentUpon>
     </Content>
+    <Content Include="Content\student-home.css" />
     <Content Include="Content\vendor\animate\animate.css" />
     <Content Include="Content\vendor\animsition\css\animsition.css" />
     <Content Include="Content\vendor\animsition\css\animsition.min.css" />
