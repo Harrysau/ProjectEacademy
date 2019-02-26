@@ -176,6 +176,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\GroupController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\UserController.cs" />
@@ -199,11 +200,27 @@
     <Compile Include="Migrations\201902230933412_AddUserAccounType.Designer.cs">
       <DependentUpon>201902230933412_AddUserAccounType.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201902261625121_AddGroup.cs" />
+    <Compile Include="Migrations\201902261625121_AddGroup.Designer.cs">
+      <DependentUpon>201902261625121_AddGroup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201902261732487_AddGroup1.cs" />
+    <Compile Include="Migrations\201902261732487_AddGroup1.Designer.cs">
+      <DependentUpon>201902261732487_AddGroup1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201902261816057_updategroup.cs" />
+    <Compile Include="Migrations\201902261816057_updategroup.Designer.cs">
+      <DependentUpon>201902261816057_updategroup.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountType.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\GroupModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\RandomCode.cs" />
+    <Compile Include="Models\UserClass.cs" />
+    <Compile Include="Models\UserInClass.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -382,7 +399,9 @@
     <Content Include="Scripts\umd\popper-utils.min.js" />
     <Content Include="Scripts\umd\popper.js" />
     <Content Include="Scripts\umd\popper.min.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -429,6 +448,11 @@
     <Content Include="Views\Shared\_Navbar.cshtml" />
     <Content Include="Views\Home\AltRegisterView.cshtml" />
     <Content Include="Views\User\UserHome.cshtml" />
+    <Content Include="Views\Group\StudentGroupView.cshtml" />
+    <Content Include="Views\Group\TeacherGroupView.cshtml" />
+    <Content Include="Views\Group\TeacherGroupDetailView.cshtml" />
+    <Content Include="Views\Group\CreateGroup.cshtml" />
+    <Content Include="Views\Group\JoinGroup.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -456,6 +480,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201902230933412_AddUserAccounType.resx">
       <DependentUpon>201902230933412_AddUserAccounType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201902261625121_AddGroup.resx">
+      <DependentUpon>201902261625121_AddGroup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201902261732487_AddGroup1.resx">
+      <DependentUpon>201902261732487_AddGroup1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201902261816057_updategroup.resx">
+      <DependentUpon>201902261816057_updategroup.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

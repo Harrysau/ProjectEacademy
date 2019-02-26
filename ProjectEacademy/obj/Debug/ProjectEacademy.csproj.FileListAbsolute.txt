@@ -186,3 +186,6 @@ E:\Harry\GitHub\ProjectEacademy\ProjectEacademy\obj\Debug\ProjectEacademy.csproj
 E:\Harry\GitHub\ProjectEacademy\ProjectEacademy\obj\Debug\ProjectEacademy.csproj.CopyComplete
 E:\Harry\GitHub\ProjectEacademy\ProjectEacademy\obj\Debug\ProjectEacademy.dll
 E:\Harry\GitHub\ProjectEacademy\ProjectEacademy\obj\Debug\ProjectEacademy.pdb
+E:\Harry\GitHub\ProjectEacademy\ProjectEacademy\obj\Debug\ProjectEacademy.Migrations.AddGroup.resources
+E:\Harry\GitHub\ProjectEacademy\ProjectEacademy\obj\Debug\ProjectEacademy.Migrations.AddGroup1.resources
+E:\Harry\GitHub\ProjectEacademy\ProjectEacademy\obj\Debug\ProjectEacademy.Migrations.updategroup.resources

@@ -25,6 +25,8 @@ namespace ProjectEacademy.Models
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
+        public DbSet<UserClass> UserClass { get; set; }
+        public DbSet<UserInClass> UserInClasses { get; set; }
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {
