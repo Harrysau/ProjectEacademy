@@ -1,0 +1,78 @@
+﻿.sidebar {
+    width: 24%;
+    height: 400px;
+    min-height: 500px;
+    overflow: auto;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 23px;
+    background-color: beige;
+    border-radius: 4px;
+    padding: 12px;
+    border: 1px solid #dddfe2;
+    margin-top: 6px;
+}
+
+.main {
+    width: 50%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding: 6px 0;
+}
+
+.main .card {
+    margin-bottom: 12px;
+}
+
+.wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
+#username {
+    margin-top: 23px;
+}
+
+.card-body {
+    padding: .5rem 1.25rem;
+}
+
+.card-header,
+.card-footer {
+    padding: .4rem 1.25rem;
+}
+
+.border-style {
+    margin: 10px 0;
+    border-top: 3px double #8c8b8b;
+}
+
+.sidebar .list-group {
+    margin-top: 10px;
+}
+
+.list-group-item {
+    padding: .3rem 1rem;
+    background-color: #fff;
+    color: black;
+    border: 1px solid rgba(0,0,0,.125);
+}
+
+.list-group-item-action:focus, .list-group-item-action:hover {
+    z-index: 1;
+    color: #495057;
+    text-decoration: none;
+    background-color: #f8f9fa;
+}
+
+.list-group-item:first-child {
+    border-top-left-radius: .25rem;
+    border-top-right-radius: .25rem;
+}
+
+.list-group-item:last-child {
+    margin-bottom: 0;
+    border-bottom-right-radius: .25rem;
+    border-bottom-left-radius: .25rem;
+}
