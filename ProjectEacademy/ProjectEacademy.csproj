@@ -224,6 +224,10 @@
     <Compile Include="Migrations\201902271038103_a112.Designer.cs">
       <DependentUpon>201902271038103_a112.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201902271514264_addmorefieldtouser.cs" />
+    <Compile Include="Migrations\201902271514264_addmorefieldtouser.Designer.cs">
+      <DependentUpon>201902271514264_addmorefieldtouser.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountType.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -270,6 +274,8 @@
     <Content Include="Content\RegisterSCSS.min.css">
       <DependentUpon>RegisterSCSS.css</DependentUpon>
     </Content>
+    <Content Include="Content\js\userprofilescript.js" />
+    <Content Include="Content\userprofilestyle.css" />
     <Content Include="Content\vendor\animate\animate.css" />
     <Content Include="Content\vendor\animsition\css\animsition.css" />
     <Content Include="Content\vendor\animsition\css\animsition.min.css" />
@@ -465,6 +471,7 @@
     <Content Include="Views\Group\TeacherGroupDetailView.cshtml" />
     <Content Include="Views\Group\CreateGroup.cshtml" />
     <Content Include="Views\Group\JoinGroup.cshtml" />
+    <Content Include="Views\User\UserProfile.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -510,6 +517,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201902271038103_a112.resx">
       <DependentUpon>201902271038103_a112.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201902271514264_addmorefieldtouser.resx">
+      <DependentUpon>201902271514264_addmorefieldtouser.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

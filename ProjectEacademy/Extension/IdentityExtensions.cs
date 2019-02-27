@@ -19,7 +19,7 @@ namespace ProjectEacademy.Extension
             var ci = identity as ClaimsIdentity;
             if (ci != null)
             {
-                return ci.FindFirstValue("User").ToString();
+                return ci.FindFirstValue("User");
             }
             return null;
         }
@@ -36,5 +36,32 @@ namespace ProjectEacademy.Extension
             }
             return null;
         }
+        public static string GetFullName(this IIdentity identity)
+        {
+            if (identity == null)
+            {
+                throw new ArgumentNullException("identity");
+            }
+            var ci = identity as ClaimsIdentity;
+            if (ci != null)
+            {
+                return ci.FindFirstValue("FullName");
+            }
+            return null;
+        }
+        public static string GetSchoolName(this IIdentity identity)
+        {
+            if (identity == null)
+            {
+                throw new ArgumentNullException("identity");
+            }
+            var ci = identity as ClaimsIdentity;
+            if (ci != null)
+            {
+                return ci.FindFirstValue("SchoolName");
+            }
+            return null;
+        }
+        
     }
 }

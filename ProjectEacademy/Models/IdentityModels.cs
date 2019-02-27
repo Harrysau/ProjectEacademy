@@ -12,13 +12,19 @@ namespace ProjectEacademy.Models
     {
         public string User { get; set; }
         public AccountType AccType { get; set; }
+        public string FullName { get; set; }
+        public string ProfileImg { get; set; }
+        public string SchoolName { get; set; }
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
         {
             // Note the authenticationType must match the one defined in CookieAuthenticationOptions.AuthenticationType
             var userIdentity = await manager.CreateIdentityAsync(this, DefaultAuthenticationTypes.ApplicationCookie);
             // Add custom user claims here
+            
             userIdentity.AddClaim(new Claim("User", User));
             userIdentity.AddClaim(new Claim("AccType", AccType.ToString()));
+            userIdentity.AddClaim(new Claim("FullName", FullName));
+            userIdentity.AddClaim(new Claim("SchoolName", SchoolName));
             return userIdentity;
         }
     }

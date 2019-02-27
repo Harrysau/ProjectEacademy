@@ -51,6 +51,10 @@ namespace ProjectEacademy.Controllers
 
         public ActionResult TeacherGroupView()
         {
+            if (User.Identity.GetAccountType().Equals("Student"))
+            {
+                return RedirectToAction("UserHome", controllerName: "User");
+            }
             string username = User.Identity.GetUserId();
             var group =
                 from g in _context.UserClass
@@ -89,6 +93,10 @@ namespace ProjectEacademy.Controllers
 
         public ActionResult CreateGroup()
         {
+            if (User.Identity.GetAccountType().Equals("Student"))
+            {
+                return RedirectToAction("UserHome", controllerName: "User");
+            }
             string GroupID = RandomCode.RandomString(6);
             return View();
         }
@@ -97,6 +105,10 @@ namespace ProjectEacademy.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult CreateGroup(CreateGroupModels models)
         {
+            if (User.Identity.GetAccountType().Equals("Student"))
+            {
+                return RedirectToAction("UserHome",controllerName: "User");
+            }
             models.TeacherID = User.Identity.GetUserId();
             models.ClassID = RandomCode.RandomString(6);
             try
@@ -114,6 +126,10 @@ namespace ProjectEacademy.Controllers
 
         public ActionResult JoinGroup()
         {
+            if (User.Identity.GetAccountType().Equals("Teacher"))
+            {
+                return RedirectToAction("UserHome", controllerName: "User");
+            }
             return View();
         }
 

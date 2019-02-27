@@ -18,5 +18,9 @@ namespace ProjectEacademy.Controllers
         {
             return View();
         }
+        public ActionResult UserProfile()
+        {
+            return View();
+        }
     }
 }

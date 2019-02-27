@@ -9,12 +9,21 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="~/Content/RegisterCSS.css" />
     <link rel="stylesheet" href="~/Content/RegisterSCSS.css" />
+    <link href="~/Content/userprofilestyle.css" rel="stylesheet" />
+    <script src="~/Content/js/userprofilescript.js"></script>
 </head>
 <body>
     <nav class="navbar navbar-dark bg-primary navbar-expand-md fixed-top" style="padding:5px;">
         <div class="container">
             <div class="navbar-header">
-                @Html.ActionLink("eAcademy", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                @if (!Request.IsAuthenticated)
+                {
+                    @Html.ActionLink("eAcademy", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                }
+                else
+                {
+                    @Html.ActionLink("eAcademy", "UserHome", "User", new { area = "" }, new { @class = "navbar-brand" })
+                }
 
             </div>
             <button class="navbar-toggler" data-target="#navcol" data-toggle="collapse">
