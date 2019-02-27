@@ -1,5 +1,8 @@
-﻿@using Microsoft.AspNet.Identity
+﻿@model ProjectEacademy.Models.Post
+
+@using Microsoft.AspNet.Identity
 @using ProjectEacademy.Extension
+
 @{
     ViewBag.Title = "UserHome";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -9,8 +12,45 @@
 @if (Request.IsAuthenticated)
 {
     <h1>Welcome Back You are a @User.Identity.GetAccountType()</h1>
+
+    <h3>Hello @User.Identity.GetUser()</h3>
+
+    if (User.Identity.GetAccountType().Equals("Teacher"))
+    {
+        using (Html.BeginForm("UserHome", "User", null, FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary(true);
+
+            <div class="form-group">
+                @Html.LabelFor(p => p.Subject)
+                @Html.EditorFor(p => p.Subject)
+                @Html.ValidationMessageFor(p => p.Subject)
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(p => p.Description)
+                @Html.TextAreaFor(p => p.Description, 5, 105, new { @style = "resize: none;" })
+                @Html.ValidationMessageFor(p => p.Description)
+            </div>
+            <div class="editor-label">
+                <label>Files:</label>
+            </div>
+            <div class="editor-field">
+                <input type="file" name="file" multiple="multiple" />
+            </div>
+            <div>
+                <input type="submit" value="Create Post" />
+            </div>
+        }
+    }
+    else
+    {
+        <div class="feed-content">
+            <h3>TeacherName has post in ClassName</h3>
+        </div>
+    }
 }
-else   
+else
 {
     <h2>You dont have permission to access this page</h2>
 }
