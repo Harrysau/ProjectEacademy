@@ -212,6 +212,18 @@
     <Compile Include="Migrations\201902261816057_updategroup.Designer.cs">
       <DependentUpon>201902261816057_updategroup.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201902270815282_updategroup1.cs" />
+    <Compile Include="Migrations\201902270815282_updategroup1.Designer.cs">
+      <DependentUpon>201902270815282_updategroup1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201902271034188_updateuserinclasses.cs" />
+    <Compile Include="Migrations\201902271034188_updateuserinclasses.Designer.cs">
+      <DependentUpon>201902271034188_updateuserinclasses.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201902271038103_a112.cs" />
+    <Compile Include="Migrations\201902271038103_a112.Designer.cs">
+      <DependentUpon>201902271038103_a112.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountType.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -489,6 +501,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201902261816057_updategroup.resx">
       <DependentUpon>201902261816057_updategroup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201902270815282_updategroup1.resx">
+      <DependentUpon>201902270815282_updategroup1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201902271034188_updateuserinclasses.resx">
+      <DependentUpon>201902271034188_updateuserinclasses.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201902271038103_a112.resx">
+      <DependentUpon>201902271038103_a112.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

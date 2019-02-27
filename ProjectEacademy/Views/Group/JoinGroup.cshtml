@@ -5,9 +5,8 @@
 }
 
 <h2>JoinGroup</h2>
-@using (Html.BeginForm())
+@using (Html.BeginForm("JoinGroup","Group",FormMethod.Post))
 {
-    @Html.AntiForgeryToken()
     @Html.ValidationMessage("JoinGroupError", new { @class = "text-danger" })
     @Html.ValidationMessage("JoinDupGroupError", new { @class = "text-danger" })
     <h5>Enter The Group Code you want to join</h5>

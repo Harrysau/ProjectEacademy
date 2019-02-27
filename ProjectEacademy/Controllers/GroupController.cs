@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using ProjectEacademy.Models;
 using Microsoft.AspNet.Identity;
+using ProjectEacademy.Extension;
 
 namespace ProjectEacademy.Controllers
 {
@@ -21,6 +22,19 @@ namespace ProjectEacademy.Controllers
         public ActionResult Index()
         {
             return View();
+        }
+
+        public ActionResult ViewGroupRedirect()
+        {
+            if (User.Identity.GetAccountType().Equals("Student"))
+            {
+                return RedirectToAction("StudentGroupView");
+            }
+            else if (User.Identity.GetAccountType().Equals("Teacher"))
+            {
+                return RedirectToAction("TeacherGroupView");
+            }
+            return RedirectToAction("Index", "Home");
         }
 
         public ActionResult StudentGroupView()
@@ -104,11 +118,12 @@ namespace ProjectEacademy.Controllers
         }
 
         [HttpPost]
-        [ValidateAntiForgeryToken]
         public ActionResult JoinGroup(JoinGroupModels models)
         {
             models.StudentID = User.Identity.GetUserId();
-
+            models.classdetail = RandomCode.RandomString(10);
+            UserInClass iin = new UserInClass() { StudentID = models.StudentID, ClassID = models.ClassID };
+            iin.classdetail = models.classdetail;
             var query =
                 from dup in _context.UserInClasses
                 where (dup.ClassID == models.ClassID && dup.StudentID == models.StudentID)
@@ -127,15 +142,15 @@ namespace ProjectEacademy.Controllers
 
             try
             {
-                _context.UserInClasses.Add(new UserInClass() { ClassID = models.ClassID, StudentID = models.StudentID });
-                _context.SaveChanges();
+                
             }
             catch (Exception)
             {
                 ModelState.AddModelError("JoinGroupError", errorMessage: "Cannot Join Group At This Time");
                 return View(models);
             }
-            
+            _context.UserInClasses.Add(iin);
+            _context.SaveChanges();
             return RedirectToAction("StudentGroupView");
         }
     }

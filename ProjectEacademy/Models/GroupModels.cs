@@ -46,5 +46,6 @@ namespace ProjectEacademy.Models
     {
         public string ClassID { get; set; }
         public string StudentID { get; set; }
+        public string classdetail { get; set; }
     }
 }

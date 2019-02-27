@@ -9,10 +9,8 @@ namespace ProjectEacademy.Models
 {
     public class UserInClass
     {
-        [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [Key,Column(Order = 0)]
         public string classdetail { get; set; }
-
         public string ClassID { get; set; }
         public string StudentID {get; set;}
     }
