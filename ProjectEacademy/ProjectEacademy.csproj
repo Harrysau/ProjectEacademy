@@ -228,12 +228,22 @@
     <Compile Include="Migrations\201902271514264_addmorefieldtouser.Designer.cs">
       <DependentUpon>201902271514264_addmorefieldtouser.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201902281443277_testMigration.cs" />
+    <Compile Include="Migrations\201902281443277_testMigration.Designer.cs">
+      <DependentUpon>201902281443277_testMigration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201902281459160_createPost.cs" />
+    <Compile Include="Migrations\201902281459160_createPost.Designer.cs">
+      <DependentUpon>201902281459160_createPost.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountType.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\FileDetail.cs" />
     <Compile Include="Models\GroupModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\Post.cs" />
     <Compile Include="Models\RandomCode.cs" />
     <Compile Include="Models\UserClass.cs" />
     <Compile Include="Models\UserInClass.cs" />
@@ -472,6 +482,7 @@
     <Content Include="Views\Group\CreateGroup.cshtml" />
     <Content Include="Views\Group\JoinGroup.cshtml" />
     <Content Include="Views\User\UserProfile.cshtml" />
+    <Content Include="Views\User\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -520,6 +531,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201902271514264_addmorefieldtouser.resx">
       <DependentUpon>201902271514264_addmorefieldtouser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201902281443277_testMigration.resx">
+      <DependentUpon>201902281443277_testMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201902281459160_createPost.resx">
+      <DependentUpon>201902281459160_createPost.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -39,6 +39,8 @@ namespace ProjectEacademy.Models
     {
         public DbSet<UserClass> UserClass { get; set; }
         public DbSet<UserInClass> UserInClasses { get; set; }
+        public DbSet<Post> Posts { get; set; }
+        public DbSet<FileDetail> FileDetails { get; set; }
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {
