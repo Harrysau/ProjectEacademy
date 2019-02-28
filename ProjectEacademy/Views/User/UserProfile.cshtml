@@ -106,7 +106,7 @@
                                             <label style="font-weight:bold;">Study Group</label>
                                         </div>
                                         <div class="col-md-8 col-6">
-                                            @Html.ActionLink("Join a Group","JoinGroup","Group", htmlAttributes: new { @class = "btn btn-primary" }) or @Html.ActionLink("View Group", "ViewGroupRedirect", "Group", htmlAttributes: new { @class = "btn btn-primary" })
+                                            @Html.ActionLink("Join a Group","JoinGroup",controllerName:"Group",routeValues: null, htmlAttributes: new { @class = "btn btn-primary" }) or @Html.ActionLink("View Group", "ViewGroupRedirect",controllerName: "Group",routeValues: null, htmlAttributes: new { @class = "btn btn-primary" })
                                         </div>
                                     </div>
                                     <hr />

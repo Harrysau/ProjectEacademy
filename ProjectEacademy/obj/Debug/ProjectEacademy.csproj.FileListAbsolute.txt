@@ -293,3 +293,4 @@ E:\Harry\GitHub\ProjectEacademy\ProjectEacademy\obj\Debug\ProjectEacademy.Migrat
 E:\Harry\GitHub\ProjectEacademy\ProjectEacademy\obj\Debug\ProjectEacademy.Migrations.updateuserinclasses.resources
 E:\Harry\GitHub\ProjectEacademy\ProjectEacademy\obj\Debug\ProjectEacademy.Migrations.a112.resources
 E:\Harry\GitHub\ProjectEacademy\ProjectEacademy\obj\Debug\ProjectEacademy.Migrations.addmorefieldtouser.resources
+D:\HARRY\GitHub\ProjectEacademy\ProjectEacademy\ProjectEacademy\obj\Debug\ProjectEacademy.Migrations.addmorefieldtouser.resources

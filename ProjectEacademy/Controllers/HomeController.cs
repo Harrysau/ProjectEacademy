@@ -10,6 +10,10 @@ namespace ProjectEacademy.Controllers
     {
         public ActionResult Index()
         {
+            if(Request.IsAuthenticated)
+            {
+                return RedirectToAction("UserHome", controllerName: "User");
+            }
             return View();
         }
 

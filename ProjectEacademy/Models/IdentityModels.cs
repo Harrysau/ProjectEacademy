@@ -20,11 +20,17 @@ namespace ProjectEacademy.Models
             // Note the authenticationType must match the one defined in CookieAuthenticationOptions.AuthenticationType
             var userIdentity = await manager.CreateIdentityAsync(this, DefaultAuthenticationTypes.ApplicationCookie);
             // Add custom user claims here
-            
-            userIdentity.AddClaim(new Claim("User", User));
-            userIdentity.AddClaim(new Claim("AccType", AccType.ToString()));
-            userIdentity.AddClaim(new Claim("FullName", FullName));
-            userIdentity.AddClaim(new Claim("SchoolName", SchoolName));
+            try
+            {
+                userIdentity.AddClaim(new Claim("User", User));
+                userIdentity.AddClaim(new Claim("AccType", AccType.ToString()));
+                userIdentity.AddClaim(new Claim("FullName", FullName));
+                userIdentity.AddClaim(new Claim("SchoolName", SchoolName));
+            }
+            catch (System.Exception)
+            {
+                
+            }
             return userIdentity;
         }
     }

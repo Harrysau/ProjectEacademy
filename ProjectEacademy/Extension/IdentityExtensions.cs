@@ -43,11 +43,15 @@ namespace ProjectEacademy.Extension
                 throw new ArgumentNullException("identity");
             }
             var ci = identity as ClaimsIdentity;
+            if (ci == null)
+            {
+                return String.Format("");
+            }
             if (ci != null)
             {
                 return ci.FindFirstValue("FullName");
             }
-            return null;
+            return "";
         }
         public static string GetSchoolName(this IIdentity identity)
         {
@@ -60,7 +64,7 @@ namespace ProjectEacademy.Extension
             {
                 return ci.FindFirstValue("SchoolName");
             }
-            return null;
+            return "";
         }
         
     }
