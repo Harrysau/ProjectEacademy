@@ -6,17 +6,27 @@
     {
     @Html.AntiForgeryToken()
 
-    <ul class="nav navbar-nav ml-auto">
-        <li class="nav-item">
-            @Html.ActionLink(User.Identity.GetUser(), "UserProfile", "User", routeValues: null, htmlAttributes: new { title = "Manage", @class = "nav-link" })
-        </li>
-        <li class="nav-item"><a href="javascript:document.getElementById('logoutForm').submit()" class="nav-link">Log off</a></li>
-    </ul>
+<ul class="nav navbar-nav">
+    <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            @User.Identity.GetUser()
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            @Html.ActionLink("View Profile", "UserProfile", "User", routeValues: null, htmlAttributes: new { title = "Manage", @class = "dropdown-item" })
+            <a class="dropdown-item" href="#">Edit Profile</a>
+            <a href="javascript:document.getElementById('logoutForm').submit()" class="dropdown-item">Log off</a>
+        </div>
+    </li>
+    @*<li class="nav-item">
+        @Html.ActionLink(User.Identity.GetUser(), "UserProfile", "User", routeValues: null, htmlAttributes: new { title = "Manage", @class = "nav-link" })
+    </li>
+    <li class="nav-item"></li>*@
+</ul>
     }
 }
 else
 {
-    <ul class="nav navbar-nav ml-auto">
+    <ul class="nav navbar-nav">
         <li class="nav-item">@Html.ActionLink("Register", "AltRegisterView", "Home", routeValues: null, htmlAttributes: new { id = "registerLink", @class = "nav-link" })</li>
         <li class="nav-item">@Html.ActionLink("Log in", "AltLoginView", "Home", routeValues: null, htmlAttributes: new { id = "loginLink", @class = "nav-link" })</li>
     </ul>

@@ -136,6 +136,18 @@ namespace ProjectEacademy.Controllers
         [HttpPost]
         public ActionResult JoinGroup(JoinGroupModels models)
         {
+            var checkclassid =
+                from c in _context.UserClass
+                where c.ClassID == models.ClassID
+                select new
+                {
+                    Classid = c.ClassID
+                };
+            if (!checkclassid.Any())
+            {
+                    ModelState.AddModelError("JoinDupGroupNotExist", errorMessage: "Class Doesn't Exist. Please enter new Class ID");
+                    return View(models);
+            }
             models.StudentID = User.Identity.GetUserId();
             models.classdetail = RandomCode.RandomString(10);
             UserInClass iin = new UserInClass() { StudentID = models.StudentID, ClassID = models.ClassID };

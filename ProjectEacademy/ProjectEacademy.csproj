@@ -176,6 +176,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\GroupController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -248,6 +249,7 @@
     <Content Include="Content\bootstrap-reboot.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\images\error-404.png" />
     <Content Include="Content\fonts\font-awesome-4.7.0\css\font-awesome.css" />
     <Content Include="Content\fonts\font-awesome-4.7.0\css\font-awesome.min.css" />
     <Content Include="Content\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.svg" />
@@ -257,6 +259,9 @@
     <Content Include="Content\fonts\iconic\fonts\Material-Design-Iconic-Font.svg" />
     <Content Include="Content\HomeStyleSheet.css" />
     <Content Include="Content\images\bg-01.jpg" />
+    <Content Include="Content\images\icons8_Collaboration_Female_Male_100px.png" />
+    <Content Include="Content\images\icons8_Meeting_100px.png" />
+    <Content Include="Content\images\icons8_Students_100px.png" />
     <Content Include="Content\images\icons\favicon.ico" />
     <Content Include="Content\js\main.js" />
     <Content Include="Content\login-main.css" />
@@ -275,6 +280,7 @@
       <DependentUpon>RegisterSCSS.css</DependentUpon>
     </Content>
     <Content Include="Content\js\userprofilescript.js" />
+    <Content Include="Content\starter-template.css" />
     <Content Include="Content\userprofilestyle.css" />
     <Content Include="Content\vendor\animate\animate.css" />
     <Content Include="Content\vendor\animsition\css\animsition.css" />
@@ -472,6 +478,7 @@
     <Content Include="Views\Group\CreateGroup.cshtml" />
     <Content Include="Views\Group\JoinGroup.cshtml" />
     <Content Include="Views\User\UserProfile.cshtml" />
+    <Content Include="Views\Error\Error404.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
