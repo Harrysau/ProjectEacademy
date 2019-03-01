@@ -32,16 +32,25 @@
                 @Html.TextAreaFor(p => p.Description, 5, 105, new { @style = "resize: none;" })
                 @Html.ValidationMessageFor(p => p.Description)
             </div>
-            <div class="editor-label">
-                <label>Files:</label>
+            <div class="form-group">
+                @Html.DropDownListFor(p => p.Type, new SelectList(Enum.GetValues(typeof(ProjectEacademy.Models.PostType))), "Select Type")
             </div>
-            <div class="editor-field">
-                <input type="file" name="file" multiple="multiple" />
+            <div class="form-group">
+                @Html.LabelFor(p => p.DeadLine)
+                @Html.TextBoxFor(p => p.DeadLine, new { @class = "date-picker"})
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(p => p.FileDetails)
+                <div class="editor-field">
+                    <input type="file" name="file" />
+                </div>
             </div>
             <div>
                 <input type="submit" value="Create Post" />
             </div>
         }
+
+
     }
     else
     {
@@ -53,4 +62,15 @@
 else
 {
     <h2>You dont have permission to access this page</h2>
+}
+
+@section Scripts {
+
+    <script src="~/Scripts/jquery-3.3.1.min.js"></script>
+    <script src="~/Scripts/jquery-ui-1.12.1.min.js"></script>
+    <script>
+        $(function () {
+            $('.date-picker').datepicker();
+        })
+    </script>
 }

@@ -19,9 +19,28 @@ namespace ProjectEacademy.Models
         [Display(Name = "Description")]
         [MaxLength(500)]
         public string Description { get; set; }
+        public string Type { get; set; }
 
         public string Date { get; set; }
+        public string DeadLine { get; set; }
 
         public virtual ICollection<FileDetail> FileDetails { get; set; }
     }
+
+    public class ViewPost
+    {
+        public int PostId { get; set; }
+        public string TeacherId { get; set; }
+
+        public string Subject { get; set; }
+
+        public string Description { get; set; }
+        public string Type { get; set; }
+
+        public string Date { get; set; }
+        public string DeadLine { get; set; }
+
+        public virtual ICollection<FileDetail> FileDetails { get; set; }
+    }
+
 }

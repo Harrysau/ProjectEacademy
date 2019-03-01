@@ -26,7 +26,21 @@ namespace ProjectEacademy.Controllers
         // GET: User
         public ActionResult Index()
         {
-            return View();
+            var userId = User.Identity.GetUserId();
+
+            var post =
+                from p in db.Posts
+                where p.TeacherId == userId
+                select new ViewPost()
+                {
+                    Subject = p.Subject,
+                    Date = p.Date,
+                    DeadLine = p.DeadLine,
+                    Description = p.Description,
+                    Type = p.Type,
+                    FileDetails = p.FileDetails
+                };
+            return View(post);
         }
 
         public ActionResult UserHome()

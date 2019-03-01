@@ -395,3 +395,5 @@ D:\Projects\Github\ProjectEacademy-branch-master-2\ProjectEacademy\ProjectEacade
 D:\Projects\Github\ProjectEacademy-branch-master-2\ProjectEacademy\ProjectEacademy\obj\Debug\ProjectEacademy.pdb
 D:\Projects\Github\ProjectEacademy-branch-master-2\ProjectEacademy\ProjectEacademy\obj\Debug\ProjectEacademy.Migrations.testMigration.resources
 D:\Projects\Github\ProjectEacademy-branch-master-2\ProjectEacademy\ProjectEacademy\obj\Debug\ProjectEacademy.Migrations.createPost.resources
+D:\Projects\Github\ProjectEacademy-branch-master-2\ProjectEacademy\ProjectEacademy\obj\Debug\ProjectEacademy.Migrations.createPostType.resources
+D:\Projects\Github\ProjectEacademy-branch-master-2\ProjectEacademy\ProjectEacademy\obj\Debug\ProjectEacademy.Migrations.createPostDeadLine.resources
