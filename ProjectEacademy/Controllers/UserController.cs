@@ -6,6 +6,7 @@ using System.Linq;
 using System.Web;
 using Microsoft.AspNet.Identity;
 using System.Web.Mvc;
+using ProjectEacademy.Extension;
 
 namespace ProjectEacademy.Controllers
 {
@@ -23,16 +24,22 @@ namespace ProjectEacademy.Controllers
             db.Dispose();
             base.Dispose(disposing);
         }
-        // GET: User
-        public ActionResult Index()
+        public ActionResult TeacherViewPost()
         {
+            if (User.Identity.GetAccountType().Equals("Student"))
+            {
+                return RedirectToAction("StudentViewPost");
+            }
+
             var userId = User.Identity.GetUserId();
 
             var post =
                 from p in db.Posts
+                join c in db.UserClass on p.ClassId equals c.ClassID
                 where p.TeacherId == userId
-                select new ViewPost()
+                select new TeacherViewPost()
                 {
+                    ClassName = c.ClassName,
                     Subject = p.Subject,
                     Date = p.Date,
                     DeadLine = p.DeadLine,
@@ -40,7 +47,51 @@ namespace ProjectEacademy.Controllers
                     Type = p.Type,
                     FileDetails = p.FileDetails
                 };
+
             return View(post);
+        }
+
+        public ActionResult StudentViewPost()
+        {
+            var userid = User.Identity.GetUserId();
+
+            if (User.Identity.GetAccountType().Equals("Teacher"))
+            {
+                return RedirectToAction("TeacherViewPost");
+            }
+
+            var post =
+                from p in db.Posts
+                join c in db.UserClass on p.ClassId equals c.ClassID
+                join t in db.Users on c.TeacherID equals t.Id
+                join uic in db.UserInClasses on c.ClassID equals uic.ClassID
+                where uic.StudentID.Equals(userid)
+                select new StudentViewPost()
+                {
+                    TeacherName = t.User,
+                    ClassName = c.ClassName,
+                    Date = p.Date,
+                    DeadLine = p.DeadLine,
+                    Description = p.Description,
+                    FileDetails = p.FileDetails,
+                    Subject = p.Subject,
+                    Type = p.Type
+                };
+
+            return View(post);
+        }
+
+        // GET: User
+        public ActionResult Index()
+        {
+            if (User.Identity.GetAccountType().Equals("Teacher"))
+            {
+                return RedirectToAction("TeacherViewPost");
+            }
+            else
+            {
+                return RedirectToAction("StudentViewPost");
+            }
         }
 
         [Route("User/CreatePost/{ClassID}")]

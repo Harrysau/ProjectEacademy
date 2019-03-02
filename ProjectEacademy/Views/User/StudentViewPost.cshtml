@@ -1,0 +1,75 @@
+﻿@model IEnumerable<ProjectEacademy.Models.StudentViewPost>
+
+@{
+    ViewBag.Title = "StudentViewPost";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Student View Post</h2>
+
+<table class="gridtable">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.TeacherName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ClassName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Subject)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Type)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DeadLine)
+        </th>
+        <th>Total Files</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.TeacherName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ClassName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Subject)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Type)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DeadLine)
+            </td>
+            <td>
+                @if (item.FileDetails.Count() == 0)
+                {
+                    <span>No File</span>
+                }
+                else {
+                    foreach (var file in item.FileDetails)
+                    {
+                        @Html.DisplayFor(modelItem => file.FileName)
+                    }
+                }
+            </td>
+        </tr>
+    }
+</table>
+
