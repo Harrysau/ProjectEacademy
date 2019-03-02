@@ -36,7 +36,7 @@
             @Html.DisplayFor(modelItem => item.SubjectName)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Create Post", "CreatePost", controllerName: "User", routeValues: new { ClassID = item.ClassID }, htmlAttributes: null) |
             @Html.ActionLink("See All Members", "TeacherGroupDetailView", routeValues: new { ClassID = item.ClassID }) |
             @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
         </td>

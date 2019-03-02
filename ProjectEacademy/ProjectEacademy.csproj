@@ -244,6 +244,10 @@
     <Compile Include="Migrations\201903011336413_createPostDeadLine.Designer.cs">
       <DependentUpon>201903011336413_createPostDeadLine.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201903021407554_createPostClassId.cs" />
+    <Compile Include="Migrations\201903021407554_createPostClassId.Designer.cs">
+      <DependentUpon>201903021407554_createPostClassId.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountType.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -527,7 +531,7 @@
     <Content Include="Views\Home\AltLoginView.cshtml" />
     <Content Include="Views\Shared\_Navbar.cshtml" />
     <Content Include="Views\Home\AltRegisterView.cshtml" />
-    <Content Include="Views\User\UserHome.cshtml" />
+    <Content Include="Views\User\CreatePost.cshtml" />
     <Content Include="Views\Group\StudentGroupView.cshtml" />
     <Content Include="Views\Group\TeacherGroupView.cshtml" />
     <Content Include="Views\Group\TeacherGroupDetailView.cshtml" />
@@ -595,6 +599,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201903011336413_createPostDeadLine.resx">
       <DependentUpon>201903011336413_createPostDeadLine.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201903021407554_createPostClassId.resx">
+      <DependentUpon>201903021407554_createPostClassId.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

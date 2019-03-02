@@ -12,7 +12,7 @@ namespace ProjectEacademy.Controllers
         {
             if(Request.IsAuthenticated)
             {
-                return RedirectToAction("UserHome", controllerName: "User");
+                return RedirectToAction("Index", controllerName: "User");
             }
             return View();
         }

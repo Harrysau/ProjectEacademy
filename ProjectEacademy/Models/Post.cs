@@ -10,6 +10,7 @@ namespace ProjectEacademy.Models
     {
         public int PostId { get; set; }
         public string TeacherId { get; set; }
+        public string ClassId { get; set; }
 
         [Required(ErrorMessage = "Please Enter Subject!!")]
         [Display(Name = "Subject")]

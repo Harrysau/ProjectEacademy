@@ -43,14 +43,16 @@ namespace ProjectEacademy.Controllers
             return View(post);
         }
 
-        public ActionResult UserHome()
+        [Route("User/CreatePost/{ClassID}")]
+        public ActionResult CreatePost()
         {
             return View();
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult UserHome(Post post)
+        [Route("User/CreatePost/{ClassID}")]
+        public ActionResult CreatePost(Post post, string ClassID)
         {
             if (ModelState.IsValid)
             {
@@ -80,6 +82,8 @@ namespace ProjectEacademy.Controllers
                 post.FileDetails = fileDetails;
                 post.Date = DateTime.Now.ToString();
                 post.TeacherId = User.Identity.GetUserId();
+                post.ClassId = ClassID;
+
                 db.Posts.Add(post);
                 db.SaveChanges();
 

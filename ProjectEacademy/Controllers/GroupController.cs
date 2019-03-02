@@ -53,7 +53,7 @@ namespace ProjectEacademy.Controllers
         {
             if (User.Identity.GetAccountType().Equals("Student"))
             {
-                return RedirectToAction("UserHome", controllerName: "User");
+                return RedirectToAction("Index", controllerName: "User");
             }
             string username = User.Identity.GetUserId();
             var group =
@@ -95,7 +95,7 @@ namespace ProjectEacademy.Controllers
         {
             if (User.Identity.GetAccountType().Equals("Student"))
             {
-                return RedirectToAction("UserHome", controllerName: "User");
+                return RedirectToAction("Index", controllerName: "User");
             }
             string GroupID = RandomCode.RandomString(6);
             return View();
@@ -107,7 +107,7 @@ namespace ProjectEacademy.Controllers
         {
             if (User.Identity.GetAccountType().Equals("Student"))
             {
-                return RedirectToAction("UserHome",controllerName: "User");
+                return RedirectToAction("Index",controllerName: "User");
             }
             models.TeacherID = User.Identity.GetUserId();
             models.ClassID = RandomCode.RandomString(6);
@@ -128,7 +128,7 @@ namespace ProjectEacademy.Controllers
         {
             if (User.Identity.GetAccountType().Equals("Teacher"))
             {
-                return RedirectToAction("UserHome", controllerName: "User");
+                return RedirectToAction("Index", controllerName: "User");
             }
             return View();
         }

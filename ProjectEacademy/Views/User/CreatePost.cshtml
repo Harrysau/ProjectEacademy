@@ -4,20 +4,16 @@
 @using ProjectEacademy.Extension
 
 @{
-    ViewBag.Title = "UserHome";
+    ViewBag.Title = "Create Post";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>UserHome</h2>
+<h2>Create Post</h2>
 @if (Request.IsAuthenticated)
 {
-    <h1>Welcome Back You are a @User.Identity.GetAccountType()</h1>
-
-    <h3>Hello @User.Identity.GetUser()</h3>
-
     if (User.Identity.GetAccountType().Equals("Teacher"))
     {
-        using (Html.BeginForm("UserHome", "User", null, FormMethod.Post, new { enctype = "multipart/form-data" }))
+        using (Html.BeginForm("CreatePost", "User", null, FormMethod.Post, new { enctype = "multipart/form-data" }))
         {
             @Html.AntiForgeryToken()
             @Html.ValidationSummary(true);
@@ -37,7 +33,7 @@
             </div>
             <div class="form-group">
                 @Html.LabelFor(p => p.DeadLine)
-                @Html.TextBoxFor(p => p.DeadLine, new { @class = "date-picker"})
+                @Html.TextBoxFor(p => p.DeadLine, new { @class = "date-picker" })
             </div>
             <div class="form-group">
                 @Html.LabelFor(p => p.FileDetails)
@@ -46,11 +42,11 @@
                 </div>
             </div>
             <div>
-                <input type="submit" value="Create Post" />
+                <button type="submit" class="btn btn-primary">
+                    Create Post
+                </button>
             </div>
         }
-
-
     }
     else
     {
