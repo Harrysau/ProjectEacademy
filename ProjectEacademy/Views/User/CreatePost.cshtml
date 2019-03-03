@@ -35,12 +35,15 @@
                 @Html.LabelFor(p => p.DeadLine)
                 @Html.TextBoxFor(p => p.DeadLine, new { @class = "date-picker" })
             </div>
+
+            <span>Max size: 35MB</span>
             <div class="form-group">
                 @Html.LabelFor(p => p.FileDetails)
                 <div class="editor-field">
                     <input type="file" name="file" />
                 </div>
             </div>
+            <label>@ViewBag.showError</label>
             <div>
                 <button type="submit" class="btn btn-primary">
                     Create Post
@@ -50,9 +53,7 @@
     }
     else
     {
-        <div class="feed-content">
-            <h3>TeacherName has post in ClassName</h3>
-        </div>
+        <h1>You don't have permission to upload file</h1>
     }
 }
 else

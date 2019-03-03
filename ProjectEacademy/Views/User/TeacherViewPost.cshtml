@@ -61,7 +61,7 @@
                 else {
                     foreach (var file in item.FileDetails)
                     {
-                        @Html.DisplayFor(modelItem => file.FileName)
+                        <a href="/User/Download/?p=@(file.Id + file.Extension)&d=@file.FileName">@file.FileName</a>
                     }
                 }
             </td>

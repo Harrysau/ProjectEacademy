@@ -113,7 +113,7 @@ namespace ProjectEacademy.Controllers
                 {
                     var file = Request.Files[i];
 
-                    if (file != null && file.ContentLength > 0)
+                    if (file != null && file.ContentLength > 0 && file.ContentLength < 36700160)
                     {
                         var fileName = Path.GetFileName(file.FileName);
                         FileDetail fileDetail = new FileDetail()
@@ -128,7 +128,7 @@ namespace ProjectEacademy.Controllers
                         var path = Path.Combine(Server.MapPath("~/App_Data/Upload/"), fileDetail.Id + fileDetail.Extension);
                         file.SaveAs(path);
                     }
-                }
+                } 
 
                 post.FileDetails = fileDetails;
                 post.Date = DateTime.Now.ToString();
@@ -142,6 +142,11 @@ namespace ProjectEacademy.Controllers
             }
 
             return View(post);
+        }
+
+        public FileResult Download(String p, String d)
+        {
+            return File(Path.Combine(Server.MapPath("~/App_Data/Upload/"), p), System.Net.Mime.MediaTypeNames.Application.Octet, d);
         }
     }
 }
