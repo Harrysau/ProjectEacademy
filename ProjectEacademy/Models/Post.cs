@@ -31,15 +31,11 @@ namespace ProjectEacademy.Models
     public class TeacherViewPost
     {
         public string ClassName { get; set; }
-
         public string Subject { get; set; }
-
         public string Description { get; set; }
         public string Type { get; set; }
-
         public string Date { get; set; }
         public string DeadLine { get; set; }
-
         public virtual ICollection<FileDetail> FileDetails { get; set; }
     }
 
@@ -47,16 +43,17 @@ namespace ProjectEacademy.Models
     {
         public string TeacherName { get; set; }
         public string ClassName { get; set; }
-
         public string Subject { get; set; }
-
         public string Description { get; set; }
         public string Type { get; set; }
-
         public string Date { get; set; }
         public string DeadLine { get; set; }
-
         public virtual ICollection<FileDetail> FileDetails { get; set; }
     }
 
+    public class TeacherClass
+    {
+        public string ClassName { get; set; }
+        public string ClassId { get; set; }
+    }
 }

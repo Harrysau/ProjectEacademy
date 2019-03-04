@@ -32,10 +32,23 @@ namespace ProjectEacademy.Controllers
             }
 
             var userId = User.Identity.GetUserId();
+            ViewBag.UserName = User.Identity.GetUser();
+
+            var teacherClass =
+                from c in db.UserClass
+                where c.TeacherID == userId
+                select new TeacherClass() {
+                    ClassName = c.ClassName,
+                    ClassId = c.ClassID
+                };
+
+            ViewBag.ListClass = teacherClass;
+            ViewBag.ClassCount = teacherClass.Count();
 
             var post =
                 from p in db.Posts
                 join c in db.UserClass on p.ClassId equals c.ClassID
+                orderby p.PostId descending
                 where p.TeacherId == userId
                 select new TeacherViewPost()
                 {

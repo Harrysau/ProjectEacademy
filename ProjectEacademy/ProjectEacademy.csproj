@@ -300,6 +300,7 @@
       <DependentUpon>RegisterSCSS.css</DependentUpon>
     </Content>
     <Content Include="Content\js\userprofilescript.js" />
+    <Content Include="Content\teacherViewPost.css" />
     <Content Include="Content\themes\base\accordion.css" />
     <Content Include="Content\themes\base\all.css" />
     <Content Include="Content\themes\base\autocomplete.css" />
