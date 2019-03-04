@@ -232,6 +232,7 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountType.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\EditUserModels.cs" />
     <Compile Include="Models\GroupModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
@@ -249,6 +250,11 @@
     <Content Include="Content\bootstrap-reboot.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\bootstrap5.min.css" />
+    <Content Include="Content\floating-labels.css" />
+    <Content Include="Content\fonts\material-icon\css\material-design-iconic-font.css" />
+    <Content Include="Content\fonts\material-icon\css\material-design-iconic-font.min.css" />
+    <Content Include="Content\fonts\material-icon\fonts\Material-Design-Iconic-Font.svg" />
     <Content Include="Content\images\error-404.png" />
     <Content Include="Content\fonts\font-awesome-4.7.0\css\font-awesome.css" />
     <Content Include="Content\fonts\font-awesome-4.7.0\css\font-awesome.min.css" />
@@ -263,9 +269,14 @@
     <Content Include="Content\images\icons8_Meeting_100px.png" />
     <Content Include="Content\images\icons8_Students_100px.png" />
     <Content Include="Content\images\icons\favicon.ico" />
+    <Content Include="Content\joingroupstyle.css" />
     <Content Include="Content\js\main.js" />
     <Content Include="Content\login-main.css" />
     <Content Include="Content\login-util.css" />
+    <Content Include="Content\fonts\material-icon\fonts\Material-Design-Iconic-Font.eot" />
+    <Content Include="Content\fonts\material-icon\fonts\Material-Design-Iconic-Font.ttf" />
+    <Content Include="Content\fonts\material-icon\fonts\Material-Design-Iconic-Font.woff" />
+    <Content Include="Content\fonts\material-icon\fonts\Material-Design-Iconic-Font.woff2" />
     <None Include="Content\RegisterCSS.scss" />
     <Content Include="Content\RegisterCSS.css">
       <DependentUpon>RegisterCSS.scss</DependentUpon>
@@ -315,6 +326,7 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Images\group-study.jpg" />
     <Content Include="Images\Home\MEETING-webinar.png" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
@@ -479,6 +491,7 @@
     <Content Include="Views\Group\JoinGroup.cshtml" />
     <Content Include="Views\User\UserProfile.cshtml" />
     <Content Include="Views\Error\Error404.cshtml" />
+    <Content Include="Views\User\EditProfile.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -3,17 +3,37 @@
     ViewBag.Title = "JoinGroup";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
-<h2>JoinGroup</h2>
-@using (Html.BeginForm("JoinGroup", "Group", FormMethod.Post))
+@try
 {
+    @section Styles{
+        <link href="~/Content/floating-labels.css" rel="stylesheet" type="text/css" />
+    }
+}
+catch (Exception e)
+{
+}
+@*<h2>JoinGroup</h2>
+    @using (Html.BeginForm("JoinGroup", "Group", FormMethod.Post))
+    {
+        @Html.ValidationMessage("JoinGroupError", new { @class = "text-danger" })
+        @Html.ValidationMessage("JoinDupGroupError", new { @class = "text-danger" })
+        @Html.ValidationMessage("JoinDupGroupNotExist", new { @class = "text-danger" })
+    <h5>Enter The Group Code you want to join</h5>
+    <div class="form-group">
+        @Html.LabelFor(g => g.ClassID, new { @class = "col-md-2 control-label" })
+        @Html.TextBoxFor(g => g.ClassID, new { @class = "form-control" })
+    </div>
+    <input type="submit" value="Join" />
+    }*@
+@using (Html.BeginForm("JoinGroup", "Group", FormMethod.Post,htmlAttributes: new {@class="form-signin" }))
+{
+
     @Html.ValidationMessage("JoinGroupError", new { @class = "text-danger" })
     @Html.ValidationMessage("JoinDupGroupError", new { @class = "text-danger" })
     @Html.ValidationMessage("JoinDupGroupNotExist", new { @class = "text-danger" })
-<h5>Enter The Group Code you want to join</h5>
-<div class="form-group">
-    @Html.LabelFor(g => g.ClassID, new { @class = "col-md-2 control-label" })
-    @Html.TextBoxFor(g => g.ClassID, new { @class = "form-control" })
-</div>
-<input type="submit" value="Join" />
+    <h1 class="h3 mb-3 font-weight-normal text-center" style="color:white">Join Group</h1>
+    <div class="form-group" style="width:390px;">
+        <input style="margin: 0 auto;" type="text" class="form-control" name="ClassID" placeholder="Class ID ..." width="390" required autofocus>
+    </div>
+    <button class="btn btn-lg btn-primary btn-block" type="submit">Join Now</button>
 }

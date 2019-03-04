@@ -25,7 +25,7 @@
     <link rel="stylesheet" type="text/css" href="../Content/login-util.css">
     <link rel="stylesheet" type="text/css" href="../Content/login-main.css">
 </head>
-<body>
+<body style="font-family: Arial;">
     @Html.Partial("_Navbar")
     <div class="limiter">
         <div class="container-login100" style="background-image: url('../Images/71564-beautiful-light-purple-background-1920x1080.png');">
@@ -53,7 +53,7 @@
                             <button type="submit" value="Log in" class="login100-form-btn">Log In</button>
                         </div>
                     </div>
-                    @Html.ActionLink("Resiter", "AltRegisterView", "Home", routeValues: null, htmlAttributes: new { @class = "d-block text-center mt-2 small" })
+                    @Html.ActionLink("Register", "AltRegisterView", "Home", routeValues: null, htmlAttributes: new { @class = "d-block text-center mt-2 small" })
                 </form>
             </div>
         </div>

@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="~/Content/RegisterSCSS.css" />
     <link href="~/Content/userprofilestyle.css" rel="stylesheet" />
     <link href="~/Content/starter-template.css" rel="stylesheet" />
+    <link rel="stylesheet" href="~/Content/fonts/material-icon/css/material-design-iconic-font.min.css">
+    @RenderSection("Styles", required: false);
     <script src="~/Content/js/userprofilescript.js"></script>
 </head>
 <body>
@@ -31,9 +33,6 @@
                 <span class="fa fa-bars" style="padding: 0px; margin: 0px; border: 0px;"></span>
             </button>
             <div id="navcol" class="navbar-collapse collapse">
-                <form class="form-inline">
-                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                </form>
                 <ul class="nav navbar-nav ml-auto">
                     <li class="nav-item">@Html.ActionLink("What's Due?", "Index", "Home", new { @class = "nav-link" })</li>
                     <li class="nav-item">@Html.ActionLink("Classes", "ViewGroupRedirect", controllerName: "Group", routeValues: null, htmlAttributes: new { @class = "nav-link" })</li>

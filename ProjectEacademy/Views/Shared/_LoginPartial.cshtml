@@ -13,7 +13,7 @@
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
             @Html.ActionLink("View Profile", "UserProfile", "User", routeValues: null, htmlAttributes: new { title = "Manage", @class = "dropdown-item" })
-            <a class="dropdown-item" href="#">Edit Profile</a>
+            @Html.ActionLink("Edit Your Profile", "EditProfile", controllerName: "User", routeValues: new { UserID = User.Identity.GetUserId() }, htmlAttributes: new { @class="dropdown-item"})
             <a href="javascript:document.getElementById('logoutForm').submit()" class="dropdown-item">Log off</a>
         </div>
     </li>

@@ -1,4 +1,4 @@
-﻿
+﻿@using Microsoft.AspNet.Identity
 @using ProjectEacademy.Extension
 @{
     ViewBag.Title = "UserProfile";
@@ -115,7 +115,7 @@
                                             <label style="font-weight:bold;">Edit Your Profile?</label>
                                         </div>
                                         <div class="col-md-8 col-6">
-                                            @Html.ActionLink("Click Here", "EditProfile", "User", htmlAttributes: new { @class = "btn btn-dark" })
+                                            @Html.ActionLink("Click Here", "EditProfile", "User",routeValues: new {UserID = User.Identity.GetUserId() }, htmlAttributes: new { @class = "btn btn-dark" })
                                         </div>
                                     </div>
                                     <hr />
