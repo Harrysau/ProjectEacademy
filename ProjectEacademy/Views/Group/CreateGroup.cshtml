@@ -5,29 +5,36 @@
     ViewBag.Title = "CreateGroup";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-@if(User.Identity.GetAccountType().Equals(0))
+<link href="~/Content/customCSS.css" rel="stylesheet" />
+@if (User.Identity.GetAccountType().Equals(0))
 {
     Response.Redirect("~/Home");
 }
-<h2>CreateGroup</h2>
-@using (Html.BeginForm("CreateGroup", "Group", FormMethod.Post))
-{
-    @Html.AntiForgeryToken()
-    @Html.ValidationMessage("Error", new { @class = "text-danger" })
-    <div class="form-group">
-        @Html.LabelFor(g => g.ClassName, new { @class = "col-md-2 control-label" })
-        @Html.TextBoxFor(g => g.ClassName, new { @class = "form-control" })
+<div class="margin-top card">
+    <div class="card-header">
+        <h2>Create New Class</h2>
     </div>
-    <div class="form-group">
-        @Html.LabelFor(g => g.SubjectName, new { @class = "col-md-2 control-label" })
-        @Html.TextBoxFor(g => g.SubjectName, new { @class = "form-control" })
-    </div>
-    <div class="form-group">
-        @Html.LabelFor(g => g.Color, new { @class = "col-md-2 control-label" })
-        @Html.TextBoxFor(g => g.Color, new { @class = "form-control" })
-    </div>
-    <div>
-        <input type="submit" value="Create Group" />
-    </div>
-}
+    <div class="card-body">
+        @using (Html.BeginForm("Create New Class", "Group", FormMethod.Post))
+        {
+            @Html.AntiForgeryToken()
+            @Html.ValidationMessage("Error", new { @class = "text-danger" })
+            <div class="form-group">
+                @Html.LabelFor(g => g.ClassName, "Name" , new { @class = "h5" })
+                @Html.TextBoxFor(g => g.ClassName, new { @class = "form-control", @placeholder = "Enter Class Name" })
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(g => g.SubjectName, "Subject", new { @class = "h5" })
+                @Html.TextBoxFor(g => g.SubjectName, new { @class = "form-control", @placeholder = "Enter Subject Name" })
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(g => g.Color, new { @class = "h5" })
+                @Html.TextBoxFor(g => g.Color, new { @class = "form-control", @placeholder = "Your Favorite Color" })
+            </div> <br />
+            <div>
+                <button type="submit" class="btn btn-primary">Create Class</button>
+            </div>
+        }
+    </div>  
+</div>
 

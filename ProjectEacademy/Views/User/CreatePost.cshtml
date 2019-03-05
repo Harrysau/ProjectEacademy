@@ -1,0 +1,87 @@
+﻿@model ProjectEacademy.Models.Post
+
+@using Microsoft.AspNet.Identity
+@using ProjectEacademy.Extension
+
+<link href="~/Content/customCSS.css" rel="stylesheet" />
+
+@{
+    ViewBag.Title = "CreatePost";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="margin-top card">
+    <div class="card-header">
+        <h2><b>Create Post</b></h2>
+    </div>
+
+    <div class="card-body">
+        @if (Request.IsAuthenticated)
+        {
+            if (User.Identity.GetAccountType().Equals("Teacher"))
+            {
+                <div class="row">
+                    <div class="col-sm-6 col-sm-offset-3">
+                        @using (Html.BeginForm("CreatePost", "User", null, FormMethod.Post, new { enctype = "multipart/form-data" }))
+                    {
+                            @Html.AntiForgeryToken()
+                            @Html.ValidationSummary(true);
+
+                            <div class="row">
+                                <div class="form-group col-sm-6">
+                                    @Html.LabelFor(p => p.Subject, htmlAttributes: new { @class = "h5" })
+                                    @Html.TextBoxFor(p => p.Subject, htmlAttributes: new { @class = "form-control", @placeholder = "Enter Subject" })
+                                    @Html.ValidationMessageFor(p => p.Subject)
+                                </div>  <!-- subject -->
+                                <div class="form-group col-sm-6">
+                                    @Html.LabelFor(p => p.Type, htmlAttributes: new { @class = "h5" })
+                                    @Html.DropDownListFor(p => p.Type, new SelectList(Enum.GetValues(typeof(ProjectEacademy.Models.PostType))), "Select Type", htmlAttributes: new { @class = "form-control" })
+                                </div>
+                            </div>  <!-- type -->
+                            <div class="form-group">
+                                @Html.LabelFor(p => p.Description, htmlAttributes: new { @class = "h5" })
+                                @Html.TextAreaFor(p => p.Description, 5, 100, htmlAttributes: new { @class = "form-control", @placeholder = "Write something...", @style = "resize: none; max-width: 100%" })
+                            </div>  <!-- description -->
+                                <div class="form-group">
+                                    @Html.LabelFor(p => p.DeadLine, htmlAttributes: new { @class = "h5" })
+                                    @Html.TextBoxFor(p => p.DeadLine, new { @class = "date-picker form-control", @placeholder = "Enter Date" })
+                                </div> <!-- deadline -->
+                            <div class="form-group">
+                                <label class="h5">Upload File</label>
+                                <div class="input-default-wrapper">
+                                    <input type="file" class="input-default-js" name="file">
+                                </div>
+                                <span>Max size: 35MB</span>
+                            </div>  <!-- Upload file -->
+                            <div>
+                                <button type="submit" class="btn btn-primary btn-lg">
+                                    Create Post
+                                </button>
+                            </div>  <!-- button -->
+                        }
+                    </div> <!-- class="col-sm-6 col-sm-offset-3" -->
+                </div> <!-- class="row"-->
+            }
+            else
+            {
+                <h1>You don't have permission to access this file</h1>
+            }
+        }
+        else
+        {
+            <h2>You dont have permission to access this page</h2>
+        }
+    </div>
+</div>
+
+@section Scripts {
+
+    <script src="~/Scripts/jquery-3.3.1.min.js"></script>
+    <script src="~/Scripts/jquery-ui-1.12.1.min.js"></script>
+    <script>
+        $(function () {
+            $('.date-picker').datepicker();
+        })
+    </script>
+}
+

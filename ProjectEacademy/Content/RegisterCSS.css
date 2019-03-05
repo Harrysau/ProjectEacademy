@@ -3,7 +3,8 @@
   --input-padding-y: .75rem; }
 
 body {
-  background-image: url("../Images/71564-beautiful-light-purple-background-1920x1080.png"); }
+  background-image: url("../Images/71564-beautiful-light-purple-background-1920x1080.png"); 
+  background-attachment: fixed; }
 
 .card-signin {
   border: 0;

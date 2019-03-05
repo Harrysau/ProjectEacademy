@@ -1,0 +1,95 @@
+﻿@model IEnumerable<ProjectEacademy.Models.TeacherViewPost>
+
+@{
+    ViewBag.Title = "TeacherViewPost";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link href="~/Content/userViewPost.css" rel="stylesheet" />
+
+<div class="container margin-top">
+    <div class="row">
+        <div class="col-md-3 static">
+            <div class="profile-card">
+                <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="user" class="profile-photo">
+                <h5><a href="/User/UserProfile" class="text-white">@ViewBag.UserName</a></h5>
+                <a href="#" class="text-white"><i class="fa fa-book"></i> @ViewBag.ClassCount class</a>
+            </div>
+
+            @if (ViewBag.ClassCount > 0)
+            {
+                <ul class="nav-news-feed">
+                    @foreach (var c in ViewBag.ListClass)
+                    {
+                        <li>
+                            <i class="fa fa-bookmark icon1"></i>
+                            <a href="/Group/TeacherGroupDetailView/@c.ClassId">@c.ClassName</a>
+                        </li>
+                    }
+                </ul>
+            }
+        </div>
+        <div class="col-md-7">
+            <div class="box">
+                <div class="tabs white nomargin-top">
+                    <div class="card">
+                        <div class"card-header" style="padding-top: 20px; padding-bottom: 20px">
+                            @Html.ActionLink("+ Create Post", "TeacherGroupView", controllerName: "Group", routeValues: null, htmlAttributes: new { @id = "create-post" })
+                        </div>
+                    </div>
+                    @if (Model.Count() > 0)
+                    {
+                        foreach (var item in Model)
+                        {
+                            <div class="tab-content">
+                                <div id="overview" class="tab-pane active">
+                                    <hr class="invisible half-margins">
+                                    <ul class="comment list-unstyled padding-10">
+                                        <li class="comment">
+                                            <div class="comment-body">
+                                                <small class="text-muted pull-right"> @item.Date </small>
+                                                <p>You have post <b>@item.Type</b> in Class <b>@item.ClassName</b> </p>
+                                                <h3><b> @item.Subject </b></h3>
+                                                <p style="white-space: pre-line"> @item.Description </p>
+
+                                                @if (item.FileDetails.Count > 0)
+                                                {
+                                                    foreach (var file in item.FileDetails)
+                                                    {
+                                                        <span><a href="/User/Download/?p=@(file.Id + file.Extension)&d=@file.FileName" class="btn btn-info active" style="margin-bottom: 10px;">@file.FileName</a></span>
+                                                    }
+                                                }
+                                                <br />
+                                                @if (item.DeadLine != null)
+                                                {
+                                                    <span><b> Deadline:</b> @item.DeadLine </span>
+                                                }
+                                            </div>
+                                            <br />
+                                            <ul class="list-inline size-11 margin-top-10">
+                                                <li>
+                                                    <a href="#" class="text-info"><i class="fa fa-reply"></i> Reply</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="text-success"><i class="fa fa-thumbs-up"></i> Like</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="text-muted">Show All Comments (36)</a>
+                                                </li>
+                                            </ul> <!-- options -->
+                                        </li>
+                                    </ul>
+                                </div> <!-- id="overview" class="tab-pane active" -->
+                            </div> <!-- class="tab-content" -->
+                        }
+                    }
+                </div> <!-- class="tabs white nomargin-top" -->
+            </div> <!-- class="box" -->
+        </div> <!-- col-md-7 -->
+        <div class="col-md-2" style="background-color: rebeccapurple;height: auto">
+            <div class="box" style="background-color: rebeccapurple">
+                <h4 style="text-align: center;margin-top: 500px;margin-bottom: 500px;color: whitesmoke">Advertisement</h4>
+            </div>
+        </div> <!-- advertise -->
+    </div> <!-- class="row" -->
+</div> <!-- container -->
