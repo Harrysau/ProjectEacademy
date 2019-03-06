@@ -15,7 +15,7 @@
         <h2>Create New Class</h2>
     </div>
     <div class="card-body">
-        @using (Html.BeginForm("Create New Class", "Group", FormMethod.Post))
+        @using (Html.BeginForm("CreateGroup", "Group", FormMethod.Post))
         {
             @Html.AntiForgeryToken()
             @Html.ValidationMessage("Error", new { @class = "text-danger" })

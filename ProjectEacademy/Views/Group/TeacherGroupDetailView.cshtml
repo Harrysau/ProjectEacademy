@@ -4,32 +4,58 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>TeacherGroupDetailView</h2>
 @if (!Request.IsAuthenticated)
 {
     Response.Redirect("~/Account/Login");
 }
-<h3>Group ID is: <u>@Model.ClassID </u></h3>
-<table class="table">
-    <tr>
-        <th>
-            Members in @Model.Classname.Classname Group
-        </th>
-        <th></th>
-    </tr>
+<h2>All Members</h2> <br />
+<h5>Name: <b>@Model.Classname.Classname</b> | Code: <b><u>@Model.ClassID</u></b></h5>
+<hr />
+@if (Model.lstStudent.Count() > 0)
+{
+    <div style="background-color:whitesmoke;">
+        <table class="table table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">Name</th>
+                </tr>
+            </thead>
+            @foreach (var item in Model.lstStudent)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.StudentName)
+                    </td>
+                </tr>
+            }
+        </table>
+    </div>
+}
+else
+{
+    <h4>Your class doesn't have any student.</h4>
+}
+    @*<h3>Group ID is: <u>@Model.ClassID </u></h3>
+        <table class="table">
+            <tr>
+                <th>
+                    Members in @Model.Classname.Classname Group
+                </th>
+                <th></th>
+            </tr>
 
-    @foreach (var item in Model.lstStudent)
-    {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.StudentName)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
-            </td>
-        </tr>
-    }
+            @foreach (var item in Model.lstStudent)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.StudentName)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                        @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                        @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                    </td>
+                </tr>
+            }
 
-</table>
+        </table>*@

@@ -5,42 +5,77 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>TeacherGroupView</h2>
+<style>
+    .box-show {
+        margin: 1px;
+        -webkit-box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.5);
+        -moz-box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.5);
+        box-shadow: 0px 0px 2px 0px rgba(0,0,0,0.5);
+    }
+</style>
 
+<h2>All Class</h2>
+<hr />
 <p>
-    @Html.ActionLink("Create New Class", "CreateGroup")
+    @Html.ActionLink("Create New Class", "CreateGroup", routeValues: null, htmlAttributes: new { @class = "btn btn-primary" })
 </p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.ClassID)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ClassName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.SubjectName)
-        </th>
-        <th></th>
-    </tr>
-
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.ClassID)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ClassName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.SubjectName)
-        </td>
-        <td>
-            @Html.ActionLink("Create Post", "CreatePost", controllerName: "User", routeValues: new { ClassID = item.ClassID }, htmlAttributes: null) |
-            @Html.ActionLink("See All Members", "TeacherGroupDetailView", routeValues: new { ClassID = item.ClassID }) |
-            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
-        </td>
-    </tr>
+@if (Model.Count() > 0)
+{
+    <div class="row">
+        @foreach (var item in Model)
+        {
+            <div class="col-sm-6 col-md-4 col-lg-3 mt-3">
+                <div class="card text-center box-show">
+                    <h4 class="card-header text-primary font-weight-bold">@Html.DisplayFor(modelItem => item.ClassName) </h4>
+                    <div class="card-body">
+                        <h5 class="card-title"><b>Subject: </b>@Html.DisplayFor(modelItem => item.SubjectName)</h5>
+                        <h5 class="card-title"><b>Code: </b><u>@Html.DisplayFor(modelItem => item.ClassID)</u></h5>
+                        <h6>
+                            @Html.ActionLink("Create Post", "CreatePost", controllerName: "User", routeValues: new { ClassID = item.ClassID }, htmlAttributes: new { @class = "btn btn-success" })
+                        </h6>
+                        <h6 class="card-title">
+                            @Html.ActionLink("View Members", "TeacherGroupDetailView", routeValues: new { ClassID = item.ClassID }, htmlAttributes: new { @class = "btn btn-info" })
+                        </h6>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+} else {
+    <h4>You don't have any class yet.</h4>
 }
+    @*<table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.ClassID)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ClassName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.SubjectName)
+                </th>
+                <th></th>
+            </tr>
 
-</table>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ClassID)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ClassName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.SubjectName)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Create Post", "CreatePost", controllerName: "User", routeValues: new { ClassID = item.ClassID }, htmlAttributes: null) |
+                        @Html.ActionLink("See All Members", "TeacherGroupDetailView", routeValues: new { ClassID = item.ClassID }) |
+                        @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                    </td>
+                </tr>
+            }
+
+        </table>*@
